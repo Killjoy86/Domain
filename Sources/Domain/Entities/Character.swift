@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Character: Codable, Identifiable {
+public struct Character: Codable, Identifiable, Hashable {
     
     public var id: Int
     public var name: String
@@ -51,5 +51,19 @@ public struct Character: Codable, Identifiable {
         case portrayed
         case category
         case betterCallSaulAppearance = "better_call_saul_appearance"
+    }
+    
+    public static func == (lhs: Character, rhs: Character) -> Bool {
+        return lhs.id == rhs.id &&
+        lhs.name == rhs.name &&
+        lhs.birthday == rhs.birthday &&
+        lhs.occupation == rhs.occupation &&
+        lhs.img == rhs.img &&
+        lhs.status == rhs.status &&
+        lhs.nickname == rhs.nickname &&
+        lhs.appearance == rhs.appearance &&
+        lhs.portrayed == rhs.portrayed &&
+        lhs.category == rhs.category &&
+        lhs.betterCallSaulAppearance == rhs.betterCallSaulAppearance
     }
 }
