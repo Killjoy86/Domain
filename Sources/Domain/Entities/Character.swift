@@ -25,6 +25,20 @@ public struct Character: Codable, Identifiable {
         return URL(string: img)
     }
     
+    public init(id: Int, name: String, birthday: String, occupation: [String], img: String, status: String, nickname: String, appearance: [Int], portrayed: String, category: String, betterCallSaulAppearance: [Int]) {
+        self.id = id
+        self.name = name
+        self.birthday = birthday
+        self.occupation = occupation
+        self.img = img
+        self.status = status
+        self.nickname = nickname
+        self.appearance = appearance
+        self.portrayed = portrayed
+        self.category = category
+        self.betterCallSaulAppearance = betterCallSaulAppearance
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id = "char_id"
         case name
