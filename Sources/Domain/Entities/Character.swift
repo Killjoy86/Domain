@@ -52,7 +52,7 @@ public struct Character: Codable, Identifiable, Hashable {
         case category
         case betterCallSaulAppearance = "better_call_saul_appearance"
     }
-    
+
     public static func == (lhs: Character, rhs: Character) -> Bool {
         return lhs.id == rhs.id &&
         lhs.name == rhs.name &&
